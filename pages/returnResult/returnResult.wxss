@@ -1,0 +1,28 @@
+/* returnResult.wxss */
+.return-result{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.return-img{
+  display: block;
+  width: 99rpx;
+  height: 107rpx;
+  margin: 0 auto;
+  margin-top: 282rpx;
+}
+.success-tips, .fail-tips{
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 30rpx;
+}
+.success-word, .fail-word{
+  width: 100%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+}

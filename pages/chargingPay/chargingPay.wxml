@@ -1,0 +1,23 @@
+<view class="container scale-1px-top">
+  <view class="payment-wrap">
+    <image src="../../res/img/ic_cost.png" class="money-icon"></image>
+    <text class="payment-text">充电费用</text>
+  </view>
+  <view class="payment-money">¥{{payDetail.curPayment/100}}</view>
+  <view class="charged-time scale-1px-bottom">时长：{{payDetail.chargingTime}}</view>
+  <view class="payment-info scale-1px-bottom">
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">收费方式：</view>
+      <view class="flex-item-justify view">{{payDetail.payway/100 || '--'}}元/小时</view>
+    </view>
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">设备编号：</view>
+      <view class="flex-item-justify view">{{payDetail.powerPointNo || '--'}}</view>
+    </view>
+  </view>
+  <form bindsubmit="paymoney" report-submit="true">
+    <view class="btn-submit">
+      <button plain="true" hover-class="other-button-hover" formType="submit">立即支付</button>
+    </view>
+   </form>
+</view>

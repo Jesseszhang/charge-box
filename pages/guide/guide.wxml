@@ -1,0 +1,10 @@
+<!--guide.wxml-->
+<view class="img">
+  <image class="guide" src="../../res/img/ic_guid_1.png"></image>
+</view>
+<view class="img">
+  <image class="guide" src="../../res/img/ic_guid_2.png"></image>
+</view>
+<view class="img">
+  <image class="guide" src="../../res/img/ic_guid_3.png"></image>
+</view>

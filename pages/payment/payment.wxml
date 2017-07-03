@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="pre-payment-wrap">
+    <image src="../../res/img/ic_cost.png" class="money-icon"></image>
+    <text class="pre-text">预授权费用</text>
+    <text class="pre-money">¥{{amountNum || '--'}}</text>
+    <text class="back-money">剩余费用将原路退还</text>
+  </view>
+  <view class="payment-info">
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">收费方式：</view>
+      <view class="flex-item-justify view">{{payway || '--'}}元/小时</view>
+    </view>
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">设备编号：</view>
+      <view class="flex-item-justify view">{{payDetail.powerPointNo || '--'}}</view>
+    </view>
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">最大电流：</view>
+      <view class="flex-item-justify view">{{payDetail.maxCurrent || '--'}}A</view>
+    </view>
+    <view class="pay-info flex-wrp-center">
+      <view class="flex-item-justify view">支持设备：</view>
+      <view class="flex-item-justify view">{{payDetail.supportEqu || '--'}}</view>
+    </view>
+  </view>
+  <view class="pay-btn-wrap">
+    <view class="pay-btn" bindtap="payPremoney">
+      <view class="pay-text-border">
+        <view class="pay-text-wrap">
+          <text class="pay-text">立即支付</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

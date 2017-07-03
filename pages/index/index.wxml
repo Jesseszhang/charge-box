@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="my-wrap" bindtap="showMyInfo" animation="{{animationBtn}}">
+    <image class="my" src="../../res/img/ic_mine.png"></image>
+  </view>
+  <view class="step-swpier-wrap">
+    <swiper class="step-swpier" indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" bindchange="changeDot">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="dot-wrap">
+    <view class="dot {{currentDot == 0 ? 'active': ''}}"></view>
+    <view class="dot {{currentDot == 1 ? 'active': ''}}"></view>
+    <view class="dot {{currentDot == 2 ? 'active': ''}}"></view>
+  </view>
+  <view class="scan-btn-wrap">
+    <view class="scan-btn" bindtap="scancode">
+      <view class="scan-text-border">
+        <view class="scan-text-wrap">
+          <text class="pay-text">扫码充电</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="enter-oode">
+    <text class="code-name scale-1px-bottom" bindtap="enterCode">输入编号充电</text>
+  </view>
+  <view class="user-wrap scale-1px-top" animation="{{animationInfo}}">
+    <view class="user scale-1px-bottom">
+      <image class="user-img" src="{{userimg}}"></image>
+      <text class="user-name">{{username}}</text>
+    </view>
+    <view class="options scale-1px-bottom" bindtap="toRecord">
+      <image class="charge-icon" src="../../res/img/ic_mine_order.png"></image>
+      <text  class="li-text">充电记录</text>
+      <image class="to-icon flex-item-justify" src="../../res/img/ic_disclosure_Indicator.png"></image>
+    </view>
+    <view class="options scale-1px-bottom" bindtap="toDeposit">
+      <image class="deposit-icon" src="../../res/img/ic_mine_cash.png"></image>
+      <text  class="li-text">我的押金</text>
+      <image class="to-icon flex-item-justify" src="../../res/img/ic_disclosure_Indicator.png"></image>
+    </view>
+    <view class="options scale-1px-bottom" bindtap="toUse">
+      <image class="use-icon" src="../../res/img/ic_mine_guide.png"></image>
+      <text class="li-text">操作指南</text>
+      <image class="to-icon flex-item-justify" src="../../res/img/ic_disclosure_Indicator.png"></image>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{showMask}}" bindtap="hideInfo" animation="{{animationMask}}">
+  </view>
+  <view class="modal-mask" wx:if="{{showModal}}" animation="{{animationModal}}">
+    <view class="modal-wrap">
+      <view class="modal-tip">提示</view>
+      <view class="modal-content">
+        <view class="modal-title">请输入设备编号</view>
+        <input class="code-input scale-1px" value="{{codeNum}}" bindinput="inputCode" maxlength="8" bindblur="inputBlur" focus/>
+      </view>
+      <view class="modal-footer scale-1px-top flex-wrp-center">
+        <view class="cancle flex-item-justify" bindtap="cancleCode">取消</view>
+        <view class="comfirm flex-item-justify {{canComfirm ? 'active' : ''}}" bindtap="comfirmCode">确认</view>
+      </view>
+    </view>
+  </view>
+</view>

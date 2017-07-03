@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="charge-wrap">
+    <image src="../../res/img/ic_success.png" class="charge-icon"></image>
+    <text class="charge-text">充电费用</text>
+    <text class="charge-money">¥{{curPayment}}</text>
+  </view>
+  <view class="charge-info-wrap">
+    <view class="charge-info flex-wrp-center">
+      <view class="flex-item-justify view blod">充电时长：</view>
+      <view class="flex-item-justify view blod">{{chargeInfo.chargeTime || '--'}}</view>
+    </view>
+    <view class="charge-info flex-wrp-center">
+      <view class="flex-item-justify view">收费方式：</view>
+      <view class="flex-item-justify view">{{payway || '--'}}元/小时</view>
+    </view>
+    <view class="charge-info flex-wrp-center">
+      <view class="flex-item-justify view">预支付金额：</view>
+      <view class="flex-item-justify view">¥{{amountNum}}</view>
+    </view>
+    <view class="charge-info flex-wrp-center">
+      <view class="flex-item-justify view">退还费用：</view>
+      <view class="flex-item-justify view">¥{{returnAmount}}</view>
+    </view>
+  </view>
+  <view class="back-wrap">
+    <view class="back-btn"bindtap="backIndex">
+      <view class="back-text-border">
+        <view class="back-text-wrap">
+          <text class="back-text">返回</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

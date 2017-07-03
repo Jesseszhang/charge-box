@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/chargingPay/chargingPay",
+    "pages/charging/charging",
+    "pages/deposit/deposit",
+    "pages/eqDetail/eqDetail",
+    "pages/record/record",
+    "pages/guide/guide",
+    "pages/returnResult/returnResult",
+    "pages/finish/finish"
+  ],
+  "window": {
+    "backgroundTextStyle": "#000",
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "充电小程序",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  }
+}

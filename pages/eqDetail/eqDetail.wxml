@@ -1,0 +1,26 @@
+<view class="container scale-1px-top">
+  <view class="eq-detail">
+    <view class="eq-payway">收费方式</view>
+    <view class="eq-hour scale-1px-bottom">{{payway || '--'}}元/小时</view>
+    <view class="eq-detial-wrap scale-1px-bottom">
+      <view class="charge-info start-time flex-wrp-center">
+        <view class="flex-item-justify view">设备编号：</view>
+        <view class="flex-item-justify view">{{powerPointNo || '--'}}</view>
+      </view>
+      <view class="charge-info start-time flex-wrp-center">
+        <view class="flex-item-justify view">最大电流：</view>
+        <view class="flex-item-justify view">{{maxCurrent || '--'}}A</view>
+      </view>
+      <view class="charge-info start-time flex-wrp-center">
+        <view class="flex-item-justify view">支持设备：</view>
+        <view class="flex-item-justify view">{{supportEqu || '--'}}</view>
+      </view>
+    </view>
+    <view class="prompt">提示：开启充电前请插入充电插头</view>
+  </view>
+  <form bindsubmit="startCharging" report-submit="true">
+    <view class="btn-submit">
+      <button plain='true' hover-class="other-button-hover" formType="submit"> 开启充电 </button>
+    </view>
+  </form>
+</view>

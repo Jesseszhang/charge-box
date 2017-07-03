@@ -1,0 +1,13 @@
+<view class="return-result">
+  <view class="return-success" wx:if="{{isSuccess}}">
+    <image class="return-img" src="../../res/img/ic_refund_success.png"></image>
+    <view class="success-tips">申请退款成功</view>
+    <view class="success-word">押金将直接退回到充值账户</view>
+    <view class="success-word">预计1-3个工作日内到账</view>
+  </view>
+  <view class="return-fail" wx:if="{{!isSuccess}}">
+    <image class="return-img" src="../../res/img/ic_refund_failure.png"></image>
+    <view class="fail-tips">申请退款失败</view>
+    <view class="fail-word">网络异常，请稍后重试</view>
+  </view>
+</view>

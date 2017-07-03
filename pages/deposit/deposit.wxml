@@ -1,0 +1,32 @@
+<view class="container scale-1px-top">
+  <view class="deposit-wrap">
+    <view class="deposit-tip">
+      <text class="deposit-text scale-1px-bottom" bindtap="whatis">什么是押金?</text>
+    </view>
+    <image class="deposit-icon" wx:if="{{!hasDeposit}}" src="../../res/img/ic_margin_null.png"></image>
+    <image class="deposit-icon" wx:if="{{hasDeposit}}"src="../../res/img/ic_margin.png"></image>
+    <view class="deposit-need" wx:if="{{!hasDeposit}}">需缴纳押金</view>
+    <view class="deposit-need" wx:if="{{hasDeposit}}">已缴纳押金</view>
+    <view class="deposit-num">
+      <text>￥</text>
+      <text class="mun" wx:if="{{!hasDeposit}}">{{depositMoney || '--'}}</text>
+      <text class="mun" wx:if="{{hasDeposit}}">{{depositedMoney || '--'}}</text>
+    </view>
+    <view class="deposit-wrod" wx:if="{{!hasDeposit}}">安全支付，随时可退</view>
+  </view>
+  <view class="pay-btn-wrap" wx:if="{{!hasDeposit}}">
+    <view class="pay-btn" bindtap="payment">
+      <view class="pay-text-border">
+        <view class="pay-text-wrap">
+          <text class="pay-text">立即支付</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <form bindsubmit="returnDeposit" report-submit="true">
+    <view class="btn-submit">
+       <button plain="true" hover-class="other-button-hover" formType="submit" wx:if="{{hasDeposit}}">退还押金</button>
+    </view>
+    <!--<view class="return-deposit" wx:if="{{hasDeposit}}">退还押金</view>-->
+  </form>
+</view>

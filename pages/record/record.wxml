@@ -1,0 +1,26 @@
+<!--record.wxml-->
+<view class="container">
+  <view class="record-wrap" wx:if="{{recordList.length !== 0}}">
+    <view class="item-wrap scale-1px"  data-orderid="{{item.orderID}}" data-status="{{item.status}}" bindtap="toPage" wx:for="{{recordList}}" wx:key="{{item}}">
+      <image src="../../res/img/ic_list_time.png" class="time-icon"></image>
+      <text class="start-time">{{item.startTime}}</text>
+      <view class="equipment-code">设备编号：{{item.powerPointNo}}</view>
+      <view class="charge-time">充电时长：{{item.chargingTime}}</view>
+      <view class="status-wrap">
+        <view class="amount {{item.status == 10 || item.status == 20 ? 'charging-red' : ''}}" wx:if="{{item.curPayment !=0}}">¥{{item.curPayment / 100}}</view>
+        <view class="status {{item.status == 10 || item.status == 20 ? 'charging-red' : ''}}" wx:if="{{item.status == 10 || item.status == 20}}">进行中</view>
+        <view class="status"  wx:if="{{item.status == 30}}">已结束</view>
+        <view class="status"  wx:if="{{item.status == 0 }}">无效订单</view>
+         <view class="status"  wx:if="{{item.status == 40 }}">已支付</view>
+         <view class="status"  wx:if="{{item.status == 50 }}">已退款</view>
+      </view>
+    </view>
+    <view class="nomore" wx:if="{{nomoredata}}">没有更多数据了</view>
+    <view class="loading" wx:if="{{loading}}">加载中...</view>
+  </view>
+  
+  <view class="nodata" wx:if="{{recordList.length == 0}}">
+    <image src="../../res/img/ic_order_null.png"></image>
+    <text>暂无充电纪录</text>
+  </view>
+</view>
